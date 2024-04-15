@@ -32,4 +32,9 @@ class Bunny
       captions: item[:captions].any?{ _1[:label] == "English" }
     )
   end
+
+  def upload_captions(guid:, captions_path:)
+    contents = Base64.encode64(File.read(captions_path))
+    client.upload_captions(guid: guid, captions_content: contents)
+  end
 end

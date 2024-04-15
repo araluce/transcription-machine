@@ -13,6 +13,10 @@ class BunnyClient
     get("/videos?itemsPerPage=#{per_page}&page=#{page}")
   end
 
+  def upload_captions(guid:, captions_content:)
+    post("/videos/#{guid}/captions/en", body: { srcLang: "en", label: "English", captionsFile: captions_content})
+  end
+
   def get(path)
     http_request Net::HTTP::Get, "/library/#{@library_id}/#{path}"
   end
