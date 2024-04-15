@@ -4,7 +4,7 @@ class TranscribeJob < ApplicationJob
   attr_reader :tmp_dir, :video
 
   def perform(video)
-    return if video.captions?
+    return if video.nil? || video.captions?
 
     @video   = video
     @tmp_dir = Dir.mktmpdir
