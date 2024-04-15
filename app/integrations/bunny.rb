@@ -1,6 +1,10 @@
 class Bunny
   attr_reader :client
 
+  def self.sync
+    new.sync
+  end
+
   def initialize(access_key: nil, library_id: nil)
     @access_key ||= Rails.application.credentials.dig(:bunny, :access_key)
     @library_id ||= Rails.application.credentials.dig(:bunny, :library_id)

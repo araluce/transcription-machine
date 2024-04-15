@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/rails/mission_control-jobs.git
+  revision: 60ec6c17914480a2dea990159d4ed9cfbc432739
+  branch: main
+  specs:
+    mission_control-jobs (0.2.1)
+      importmap-rails
+      rails (~> 7.1)
+      stimulus-rails
+      turbo-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -101,6 +112,11 @@ GEM
       reline (>= 0.3.8)
     drb (2.2.1)
     erubi (1.12.0)
+    et-orbi (1.2.11)
+      tzinfo
+    fugit (1.9.0)
+      et-orbi (~> 1, >= 1.2.7)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.4)
@@ -149,6 +165,7 @@ GEM
     public_suffix (5.0.4)
     puma (6.4.2)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.7.3)
     rack (3.0.10)
     rack-session (2.0.0)
@@ -204,6 +221,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    solid_queue (0.3.0)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      concurrent-ruby (~> 1.2.2)
+      fugit (~> 1.9.0)
+      railties (>= 7.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -252,10 +275,12 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  mission_control-jobs!
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
   redis (>= 4.0.1)
   selenium-webdriver
+  solid_queue
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
