@@ -13,7 +13,7 @@ class TranscribeJob < ApplicationJob
 
     video.update(captions: true)
   ensure
-    FileUtils.remove_entry(tmp_dir)
+    FileUtils.remove_entry(tmp_dir) if tmp_dir.present?
   end
 
   def download
