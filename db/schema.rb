@@ -118,6 +118,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_180849) do
     t.string "library_id"
     t.string "guid"
     t.string "title"
+    t.string "thumbnail_filename"
+    t.integer "views"
     t.boolean "captions", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -29,6 +29,8 @@ class Bunny
     video.update(
       library_id: item[:videoLibrearyId],
       title: item[:title],
+      thumbnail_filename: item[:thumbnailFileName],
+      views: item[:views],
       captions: item[:captions].any?{ _1[:label] == "English" }
     )
   end

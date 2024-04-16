@@ -8,6 +8,10 @@ class Video < ApplicationRecord
     "https://#{Rails.application.credentials.dig(:bunny, :zone)}.b-cdn.net/#{guid}/play_240p.mp4"
   end
 
+  def thumbnail_url
+    "https://#{Rails.application.credentials.dig(:bunny, :zone)}.b-cdn.net/#{guid}/#{thumbnail_filename}"
+  end
+
   def transcribe
     TranscribeJob.perform_later(self)
   end
