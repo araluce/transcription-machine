@@ -5,7 +5,7 @@ default: &default
       recurring_tasks:
         sync_job:
           class: SyncJob
-          schedule: "every day"
+          schedule: "every hour"
   workers:
     - queues: ["default"]
       threads: 5
