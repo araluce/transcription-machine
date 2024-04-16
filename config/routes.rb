@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     collection do
       resource :sync, only: %i[create]
     end
+
+    resource :transcribe, only: %i[create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

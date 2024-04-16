@@ -12,8 +12,9 @@
     </h2>
 
     <% if action_name != "show" %>
-      <%= link_to "Show this video", video, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= link_to "Edit this video", edit_video_path(video), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "View", video, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Edit", edit_video_path(video), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= button_to "Transcribe", video_transcribe_path(video), method: :post, form_class: "inline-block", class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
       <hr class="mt-6">
     <% end %>
   </div>
