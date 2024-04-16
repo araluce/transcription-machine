@@ -3,12 +3,12 @@
   <%= turbo_stream_from video %>
 <% end %>
 
-<div class="w-full">
+<div class="w-full mb-16">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-4">
     <h1 class="font-bold text-4xl">Videos</h1>
     <div class="flex items-center gap-2">
       <%= button_to "Sync", sync_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
@@ -19,4 +19,8 @@
   <div id="videos" class="min-w-full">
     <%= render @videos %>
   </div>
+
+  <% if @pagy.pages > 1 %>
+    <div class="mt-8"><%== pagy_nav(@pagy) %></div>
+  <% end %>
 </div>

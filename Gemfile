@@ -71,3 +71,5 @@ end
 
 gem "solid_queue"
 gem "mission_control-jobs", github: "rails/mission_control-jobs", branch: "main"
+
+gem "pagy", "~> 8.2"
