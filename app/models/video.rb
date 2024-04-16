@@ -2,6 +2,7 @@ class Video < ApplicationRecord
   scope :captioned, -> { where(captions: true) }
   scope :uncaptioned, -> { where(captions: false) }
 
+  broadcasts_refreshes
   after_commit :transcribe, on: %i[create update], unless: :captions?
 
   def download_url
